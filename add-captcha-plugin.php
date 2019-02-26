@@ -109,11 +109,12 @@ class AddCaptchaPlugin {
     }
 }
 
-if ( class_exists( 'AddCaptchaPlugin' ) ) {
+if ( class_exists( 'AddCaptchaPlugin' ) ) :
 
     $addCaptchaPlugin = new AddCaptchaPlugin();
     $addCaptchaPlugin->register();
-}
+    
+endif;
 
 register_activation_hook( __FILE__, array( $addCaptchaPlugin, 'activation' ) );
 register_deactivation_hook( __FILE__, array( $addCaptchaPlugin, 'deactivation' ) );
